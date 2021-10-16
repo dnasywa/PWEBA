@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Filter JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#input").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#content tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        td {
+            border: 1px solid #000000;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            border: 1px solid #000000;
+            text-align: left;
+            padding: 8px;
+            background-color: #6a6565;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(224, 81, 81); padding: 100px;">
+
+    <div class="container-sm" style="background-color: blanchedalmond; padding: 60px;">
+        <p>Silakan masukkan NRP Anda pada isian di bawah ini untuk menemukan data IPK Anda dengan cepat</p>
+        <input id="input" type="text" placeholder="Search">
+        <hr>
+
+        <div>
+            <p>Berikut ini merupakan sekumpulan data IPK dari beberapa mahasiswa Sistem Informasi 2020 yang terdata pada basis data sementara: </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th><b>NRP</b></th>
+                        <th><b>IPK</b></th>
+                    </tr>
+                </thead>
+                <tbody id="content">
+                    <tr>
+                        <td>5026201074</td>
+                        <td>3.12</td>
+                    </tr>
+                    <tr>
+                        <td>5026203921</td>
+                        <td>3.32</td>
+                    </tr>
+                    <tr>
+                        <td>5026203472</td>
+                        <td>3.25</td>
+                    </tr>
+                    <tr>
+                        <td>5026203204</td>
+                        <td>4.00</td>
+                    </tr>
+                    <tr>
+                        <td>5026203321</td>
+                        <td>3.30</td>
+                    </tr>
+                    <tr>
+                        <td>5026203312</td>
+                        <td>4.00</td>
+                    </tr>
+                    <tr>
+                        <td>5026202312</td>
+                        <td>3.24</td>
+                    </tr>
+                    <tr>
+                        <td>5026203234</td>
+                        <td>3.52</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
